@@ -4,6 +4,7 @@ export const Button = styled.button`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   
   padding: 16px;
   width: 64px;
@@ -62,6 +63,7 @@ export const Name = styled.div`
   font-weight: 400;
   font-size: 50px;
   line-height: 48px;
+  padding-top: 10px;
   /* identical to box height, or 120% */
 
   letter-spacing: -0.02em;

@@ -1,5 +1,5 @@
 const initialState = {
-    products:[
+    products: [
         {
             "name": "orange Juice",
             "category": "Drinks",
@@ -40,7 +40,15 @@ const initialState = {
             "category": "Drinks",
             "price": 0.4
         }
-    ]
+    ],
+    modal: {
+        on: true,
+        card: {
+            "name": "Team",
+            "category": "Drinks",
+            "price": 0.4
+        }
+    }
 }
 
 const reducer = (state = initialState, action) => {
@@ -49,7 +57,6 @@ const reducer = (state = initialState, action) => {
             return {...state}
     }
 }
-
 
 
 export default reducer
