@@ -6,32 +6,26 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
   
-  padding: 16px;
-  width: 64px;
-  height: 56px;
+  padding: 8px;
+  width: 40px;
+  height: 30px;
   
   font-family: sans-serif;
-  font-size: 15px;
+  font-size: 10px;
   
   
   background: #4BCFA0;
-  border-radius: 16px;
+  border-radius: 8px;
   border-color: #4BCFA0;
 `
-export const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
+export const Dollar = styled.div`
+  font-family: 'Roboto', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
   
-  padding: 32px;
-  margin: 32px;
-  
-  width: 352px;
-  height: 256px;
-
-  background: #FFFFFF;
-  border-radius: 24px;
 `
 export const Category = styled.div`
   width: 59px;
@@ -40,8 +34,8 @@ export const Category = styled.div`
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 10px;
+  line-height: 12px;
   /* identical to box height, or 150% */
 
   letter-spacing: 0.04em;
@@ -51,19 +45,12 @@ export const Category = styled.div`
 
   opacity: 0.5;
 `
-export const PriceGroup = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-`
 export const Name = styled.div`
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 50px;
-  line-height: 48px;
-  padding-top: 10px;
+  font-size: 28px;
+  line-height: 24px;
   /* identical to box height, or 120% */
 
   letter-spacing: -0.02em;
@@ -73,27 +60,11 @@ export const Price = styled.div`
   font-family: 'Roboto', serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 60px;
-  line-height: 72px;
+  font-size: 30px;
+  line-height: 36px;
   /* identical to box height, or 120% */
 
   letter-spacing: -0.02em;
 
   color: #000000;
-`
-export const Dollar = styled.div`
-  font-family: 'Roboto', serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 35px;
-  line-height: 35px;
-  letter-spacing: -0.02em;
-
-
-`
-export const PriceGroupWithButton = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
 `

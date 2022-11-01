@@ -3,10 +3,10 @@ import store from "./redux/redux";
 import AppView from "./AppView";
 
 
-
 function App() {
+
     return (<Provider store={store}>
-            <AppView cards={store.getState().mainPage.products} modal={store.getState().mainPage.modal}/>
+            <AppView  />
         </Provider>
     );
 }

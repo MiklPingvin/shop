@@ -1,5 +1,7 @@
+const SET_BUY_MODAL = 'SET_BUY_MODAL'
+
 const initialState = {
-    products: [
+    cards: [
         {
             "name": "orange Juice",
             "category": "Drinks",
@@ -42,7 +44,7 @@ const initialState = {
         }
     ],
     modal: {
-        on: true,
+        on: false,
         card: {
             "name": "Team",
             "category": "Drinks",
@@ -53,10 +55,24 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
+        case SET_BUY_MODAL:
+            return {
+                ...state,
+                modal: {
+                    ...state.modal,
+                    on: action.status
+                }
+
+            }
         default:
             return {...state}
     }
 }
+
+export const setBuyModal = (status) => ({
+    type: SET_BUY_MODAL,
+    status: status
+})
 
 
 export default reducer

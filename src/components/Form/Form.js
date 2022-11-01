@@ -1,32 +1,8 @@
 import {useForm} from "react-hook-form";
-import {Button, Category, Dollar, Name, Price, PriceGroup} from "../Product/ProductStyles";
-import styled from "styled-components";
+import {PriceGroup} from "../../styles/CardStyles";
+import {Category, Dollar, Price} from "../../styles/Styles";
+import {Container, Form, FormButton, FormName, Input} from "../../styles/FormStyles";
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-
-  margin-top: 30px;
-`
-
-const FormButton = styled(Button)`
-  width: 125px;
-`
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-`
-
-const Input = styled.input`
-  font-size: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 16px;
-  padding: 15px;
-`
 
 const FormView = ({card}) => {
     const {register, handleSubmit} = useForm()
@@ -43,7 +19,7 @@ const FormView = ({card}) => {
     return <Container>
         <div>
             <Category>{card.category}</Category>
-            <Name>{card.name}</Name>
+            <FormName>{card.name}</FormName>
         </div>
         <PriceGroup>
             <Dollar>$</Dollar>

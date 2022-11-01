@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Button} from "./Styles";
 
 export const Cards = styled.div`
 
@@ -7,7 +8,6 @@ export const Cards = styled.div`
   justify-content: center;
   align-items: center;
   align-content: center;
-  margin: 0 100px;
 
 
 `
@@ -17,26 +17,16 @@ export const Main = styled.div`
   align-content: center;
   justify-content: center;
   align-items: center;
-
-
+  
   width: 100vw;
+  min-width: 750px;
   height: 100vh;
-
+  
+  
   background-color: #E5E5E5;
 
 `
-export const ButtonBuyCheapest = styled.button`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  padding: 16px;
-
-  font-family: sans-serif;
-  font-size: 25px;
-
-
-  background: #4BCFA0;
-  border-radius: 16px;
-  border-color: #4BCFA0;
+export const ButtonBuyCheapest = styled(Button)`
+  font-size: 12px;
+  width: 100px;
 `

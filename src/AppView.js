@@ -1,14 +1,17 @@
-import ProductView from "./components/Product/ProductView";
-import {ButtonBuyCheapest, Cards, Main} from "./AppStyles";
+import {ButtonBuyCheapest, Cards, Main} from "./styles/AppStyles";
 import Modal from "./components/Modal/Modal";
 import Form from "./components/Form/Form";
+import {Card} from "./components/Card/Card";
+import {useSelector} from "react-redux";
 
 
-function AppView({cards, modal}) {
+function AppView() {
+    const cards = useSelector((state)=>state.mainPage.cards)
+    const modal = useSelector((state)=>state.mainPage.modal)
     return <Main>
         <Cards>
-            {cards.map(card => <ProductView name={card.name} category={card.category} price={card.price}/>)}
-        </Cards>;
+            {cards.map(card => <Card name={card.name} key={card.name} category={card.category} price={card.price}/>)}
+        </Cards>
         <ButtonBuyCheapest>Buy cheapest</ButtonBuyCheapest>
         {modal.on && <Modal children={<Form card={modal.card}/>}/>}
     </Main>
