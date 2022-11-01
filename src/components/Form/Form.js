@@ -5,7 +5,7 @@ import {Container, Form, FormButton, FormName, Input} from "../../styles/FormSty
 
 
 const FormView = ({card}) => {
-    const {register, handleSubmit,reset} = useForm()
+    const {register, handleSubmit} = useForm()
 
     const onSubmit = (data,event) => {
         console.log(`

@@ -40,7 +40,7 @@ const initialState = {
         {
             "name": "Team",
             "category": "Drinks",
-            "price": 0.4
+            "price": 2.4
         }
     ],
     modal: {
