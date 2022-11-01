@@ -10,7 +10,7 @@ function AppView() {
     const modal = useSelector((state)=>state.mainPage.modal)
     return <Main>
         <Cards>
-            {cards.map(card => <Card name={card.name} key={card.name} category={card.category} price={card.price}/>)}
+            {cards.map(card => <Card  key={card.name} card={card}/>)}
         </Cards>
         <ButtonBuyCheapest>Buy cheapest</ButtonBuyCheapest>
         {modal.on && <Modal children={<Form card={modal.card}/>}/>}

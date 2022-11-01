@@ -60,7 +60,8 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 modal: {
                     ...state.modal,
-                    on: action.status
+                    on: action.status,
+                    card: action.card
                 }
 
             }
@@ -69,9 +70,10 @@ const reducer = (state = initialState, action) => {
     }
 }
 
-export const setBuyModal = (status) => ({
+export const setBuyModal = (status,card = {}) => ({
     type: SET_BUY_MODAL,
-    status: status
+    status: status,
+    card: card
 })
 
 

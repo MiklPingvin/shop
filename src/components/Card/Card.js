@@ -1,7 +1,7 @@
 import CardView from "./CardView";
 import {useDispatch} from "react-redux";
 
-export const Card =({name, category, price})=>{
+export const Card =({card})=>{
     const dispatch = useDispatch();
-    return <CardView price={price} name={name} category={category} dispatch={dispatch} />
+    return <CardView card={card} dispatch={dispatch} />
 }

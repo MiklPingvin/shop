@@ -3,19 +3,19 @@ import {Button, Category, Dollar, Name, Price} from "../../styles/Styles";
 import {setBuyModal} from "../../redux/reducer";
 
 
-const CardView = ({name, category, price,dispatch}) => {
+const CardView = ({card,dispatch}) => {
 
     return <Container>
         <div>
-            <Category>{category}</Category>
-            <Name>{name}</Name>
+            <Category>{card.category}</Category>
+            <Name>{card.name}</Name>
         </div>
         <PriceGroupWithButton>
             <PriceGroup>
                 <Dollar>$</Dollar>
-                <Price>{price}</Price>
+                <Price>{card.price}</Price>
             </PriceGroup>
-            <Button onClick={()=>dispatch(setBuyModal(true))}>BUY</Button>
+            <Button onClick={()=>dispatch(setBuyModal(true,card))}>BUY</Button>
         </PriceGroupWithButton>
     </Container>
 }

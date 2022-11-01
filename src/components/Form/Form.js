@@ -5,15 +5,15 @@ import {Container, Form, FormButton, FormName, Input} from "../../styles/FormSty
 
 
 const FormView = ({card}) => {
-    const {register, handleSubmit} = useForm()
+    const {register, handleSubmit,reset} = useForm()
 
-    const onSubmit = data => {
+    const onSubmit = (data,event) => {
         console.log(`
             Mr/Mrs ${data.name}
             Number ${data.number}
             Make an order for ${card.name}
         `)
-
+        event.target.reset()
     }
 
     return <Container>
