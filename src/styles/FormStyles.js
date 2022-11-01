@@ -27,3 +27,7 @@ export const Input = styled.input`
   border-radius: 12px;
   padding: 12px;
 `
+export const ErrorMassage = styled.div`
+  font-size: 14px;
+  color: red;
+`

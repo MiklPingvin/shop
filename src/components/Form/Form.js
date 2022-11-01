@@ -1,19 +1,22 @@
 import {useForm} from "react-hook-form";
 import {PriceGroup} from "../../styles/CardStyles";
 import {Category, Dollar, Price} from "../../styles/Styles";
-import {Container, Form, FormButton, FormName, Input} from "../../styles/FormStyles";
+import {Container, ErrorMassage, Form, FormButton, FormName, Input} from "../../styles/FormStyles";
 
 
 const FormView = ({card}) => {
-    const {register, handleSubmit} = useForm()
+    const {register, handleSubmit,reset, formState: {errors}} = useForm({
+        mode: "onChange",
+        reValidateMode: "onBlur"
+    })
 
-    const onSubmit = (data,event) => {
+    const onSubmit = (data) => {
         console.log(`
             Mr/Mrs ${data.name}
             Number ${data.number}
             Make an order for ${card.name}
         `)
-        event.target.reset()
+        reset()
     }
 
     return <Container>
@@ -26,8 +29,28 @@ const FormView = ({card}) => {
             <Price>{card.price}</Price>
         </PriceGroup>
         <Form onSubmit={handleSubmit(onSubmit)}>
-            <Input {...register('name')} type="text" placeholder={'Name'}/>
-            <Input {...register('number')} type="text" placeholder={'Number'}/>
+            <div><Input {...register('name', {
+                required: 'This field in required',
+                pattern: {
+                    value: /^[a-zA-Zа-яА-Я]+$/,
+                    message: 'Only letters allowed'
+                }
+            })} type="text" placeholder={'Name'}/>
+                {errors.name && <ErrorMassage>{errors.name.message}</ErrorMassage>}
+            </div>
+            <div><Input {...register('number', {
+                required: 'This field in required',
+                pattern: {
+                    value: /^[0-9]{0,12}$/,
+                    message: 'Only numbers allowed'
+                },
+                maxLength: {
+                    value: 12,
+                    message: "Should contain 12 characters"
+                }
+            })} type="text" placeholder={'Number'}/>
+                {errors.number && <ErrorMassage>{errors.number.message}</ErrorMassage>}
+            </div>
             <FormButton>ORDER</FormButton>
         </Form>
     </Container>

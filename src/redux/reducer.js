@@ -1,4 +1,5 @@
 const SET_BUY_MODAL = 'SET_BUY_MODAL'
+const SET_CARDS = 'SET_CARDS'
 
 const initialState = {
     cards: [
@@ -65,15 +66,25 @@ const reducer = (state = initialState, action) => {
                 }
 
             }
+        case SET_CARDS:
+            return {
+                ...state,
+                cards: action.cards
+            }
         default:
             return {...state}
     }
 }
 
-export const setBuyModal = (status,card = {}) => ({
+export const setBuyModal = (status, card = {}) => ({
     type: SET_BUY_MODAL,
     status: status,
     card: card
+})
+
+export const setCards = (cards) => ({
+    type: SET_CARDS,
+    cards: cards
 })
 
 
